@@ -1,4 +1,4 @@
-package EXAM.CapGemini;
+package sample.questions;
 
 public class DigitOrdering {
 public static void main(String[] args) {

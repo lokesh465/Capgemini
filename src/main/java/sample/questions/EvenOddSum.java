@@ -1,4 +1,4 @@
-package EXAM.CapGemini;
+package sample.questions;
 
 public class EvenOddSum {
 	public static void main(String args[])
