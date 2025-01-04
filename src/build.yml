@@ -1,3 +1,38 @@
+pluginManagement {
+    repositories {
+        maven {
+            url 'https://mycompany.artifactory.com/artifactory/libs-release'
+            credentials {
+                username = artifactory_user
+                password = artifactory_password
+            }
+        }
+        gradlePluginPortal()
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == "org.springframework.boot") {
+                useModule("org.springframework.boot:spring-boot-gradle-plugin:3.1.1")
+            }
+            if (requested.id.id == "io.spring.dependency-management") {
+                useModule("io.spring.dependency-management:1.0.11.RELEASE")
+            }
+            if (requested.id.id == "org.openapi.generator") {
+                useModule("org.openapitools:openapi-generator-gradle-plugin:6.6.0")
+            }
+            if (requested.id.id == "org.sonarqube") {
+                useModule("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.4.1.3373")
+            }
+            if (requested.id.id == "net.foragerr.jmeter") {
+                useModule("net.forager.jmeter:jmeter-gradle-plugin:1.1.0-4.0")
+            }
+        }
+    }
+}
+
+
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.1'
